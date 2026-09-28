@@ -1,7 +1,4 @@
-package org.example;
-
-import java.io.File;
-import java.nio.file.Path;
+package practicaFicheros;
 
 public class ProbarFicheros2 {
     static void main() {

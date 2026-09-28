@@ -1,4 +1,4 @@
-package org.example;
+package practicaFicheros;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
