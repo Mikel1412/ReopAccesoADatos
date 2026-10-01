@@ -1,32 +1,39 @@
 package practicaFicheros;
 
+import java.io.IOException;
+import java.nio.file.Path;
+
 public class ProbarFicheros2 {
-    static void main() {
+    static void main() throws IOException {
         /*1. Crea una clase ArchivoTXT cuyo constructor reciba un String con una ruta y lo
         guarde como Path. Debe comprobar que la ruta hace referencia a un fichero (no
         directorio) y que este existe. */
 
-        ArchivoTXT archivo1 = new ArchivoTXT("C:\\Users\\AlumnoD\\Desktop\\prueba.txt.txt");
+        /*ArchivoTXT archivo1 = new ArchivoTXT("C:\\Users\\AlumnoD\\Desktop\\prueba.txt.txt");
 
-        ArchivoTXT archivo2 = new ArchivoTXT("C:\\Users\\AlumnoD\\Desktop\\ubu.txt");
+        ArchivoTXT archivo2 = new ArchivoTXT("C:\\Users\\AlumnoD\\Desktop\\ubu.txt");*/
+
+        ArchivoTXT archivo3 = new ArchivoTXT("C:\\Users\\AlumnoD\\Desktop\\CarpetaMover\\ubuntu.txt");
 
 
 
        /* 2. Añade un metodo aVerso que lea el contenido del fichero y lo devuelva
        introduciendo un salto de línea después de cada punto. */
 
-        archivo1.aVerso();
+        /*archivo1.aVerso();*/
 
         /*3. Añade un metodo codifica que reciba la ruta de otro fichero (puede existir o no),
         lea el contenido del fichero original, elimine todas las vocales y escriba el
         resultado en el fichero destino. Usa Files.newBufferedReader y Files.newBufferedWriter.*/
 
-        String ruta = "C:\\Users\\AlumnoD\\Desktop\\ubu.txt";
-        archivo1.codifica(ruta);
+        /*String ruta = "C:\\Users\\AlumnoD\\Desktop\\ubu.txt";
+        archivo1.codifica(ruta);*/
 
         /*4. Añade un metodo mover que reciba otra ruta y mueva el fichero a ella. Si el
         directorio origen queda vacío, debe eliminarse también.*/
 
+         String ruta2 = "C:\\Users\\AlumnoD\\Desktop\\CarpetaMover\\ubuntu.txt";
+        archivo3.mover(Path.of("C:\\Users\\AlumnoD\\Desktop\\Destino\\"));
 
 
         /*5. Añade tres métodos:

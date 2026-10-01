@@ -1,11 +1,10 @@
 package practicaFicheros;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ArchivoTXT {
@@ -59,15 +58,33 @@ public class ArchivoTXT {
         }
     }
 
-    public void mover(String moverFichero) throws IOException {
+   public void mover(Path moverFichero) throws IOException {
         try {
-            Files.move(this.ruta, Path.of(moverFichero));
+            Files.move(this.ruta, moverFichero);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        if(isEmpty(this.ruta.getParent())){
+        List<Path> contenidoLista = List.of();
+        try (var stream = Files.list(this.ruta.getParent())) {
+            contenidoLista = stream.toList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        if (contenidoLista.isEmpty()){
+            Files.deleteIfExists(this.ruta.getParent());
         }
     }
 
+    /* public int contarCaracteres() {
+
+    }
+
+    public int contarLetras() {
+
+    }
+
+    public int contarPuntuacion() {
+
+    } */
 }
